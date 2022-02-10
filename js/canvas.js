@@ -4,20 +4,18 @@
 var tablero = document.getElementById("ahorcado");
 var pincel = tablero.getContext("2d"); 
 
-function juegoAhorcado() {
-    dibujarBaseDelMastil()
-    dibujarMastil();
-    dibujarCuerpoHumano();
-}
+
 function dibujarCuerpoHumano() {
-    dibujarCabeza(550,340, 40);
-    dibujarLinea("black", 550, 380, 550, 500); // cuerpo
+    dibujarCabeza()
+    dibujarTorzo()
     dibujarBrazoIzq();
     dibujarBrazoDer();
     dibujarPiernaIzq();
     dibujarPiernaDer();
 }
-
+function dibujarTorzo() {
+    dibujarLinea("black", 550, 380, 550, 500); // cuerpo
+}
 function dibujarBrazoIzq() {
     dibujarLinea("black", 550, 400, 470, 450); // brazo izq
 }
@@ -30,20 +28,25 @@ function dibujarPiernaIzq() {
 function dibujarPiernaDer() {
     dibujarLinea("black", 550, 500, 630, 550); // pierna der 
 }
-function dibujarCabeza(x,y,radio){
+function dibujarCabeza() {
+    dibujarCircunferencia(550,340, 40);
+}
+function dibujarCircunferencia(x,y,radio){
     pincel.fillStyle = "black";
     pincel.beginPath();
     pincel.arc(x,y,radio,0,2*Math.PI);
     pincel.fill();
 } 
 
-function dibujarMastil() {
-    // cuerpo del mástil
+function dibujarCuerpoMastil() {
     dibujarLinea("black", 300, 700, 300, 250); 
+}
+function dibujarHorizontalMastil() {
     dibujarLinea("black", 300, 250, 550, 250); 
+}
+function dibujarCuerda() {
     dibujarLinea("black", 550, 250, 550, 300); 
 }
-
 function dibujarBaseDelMastil(){
     dibujarLinea("black", 200, 700, 400, 700); // base
 }
@@ -57,4 +60,3 @@ function dibujarLinea(color, xInicial, yInicial, xFinal, yFinal){
     pincel.closePath();
 }
 
-juegoAhorcado()
