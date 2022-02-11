@@ -50,7 +50,12 @@ function dibujarCuerda() {
 function dibujarBaseDelMastil(){
     dibujarLinea("black", 200, 700, 400, 700); // base
 }
-
+function dibujarMastil() {
+    dibujarBaseDelMastil();
+    dibujarCuerpoMastil();
+    dibujarHorizontalMastil();
+    dibujarCuerda()
+}
 function dibujarLinea(color, xInicial, yInicial, xFinal, yFinal){
     pincel.beginPath();
     pincel.strokeStyle = color;
