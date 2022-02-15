@@ -1,4 +1,7 @@
-
+body {
+  background-color: rgba(95, 71, 109, 0.932);
+}
+ 
 .titulo {
   padding: 15px;
   width: 30vw;
@@ -29,5 +32,17 @@
 }
 #ahorcado {
   background-color: #d2c9e5;
+  
 }
-
+#teclas-presionadas {
+  position: relative;
+  background-color: #c4aef3;
+  border-style: none;
+  border-radius: 20px;
+  padding-left: 10px;
+  height: 30px;
+  width: 200px;
+  margin-top: 500px;
+  margin-left: 700px;
+ 
+}

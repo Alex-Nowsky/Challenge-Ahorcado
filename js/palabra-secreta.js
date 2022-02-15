@@ -3,11 +3,7 @@ botonDeInicio.onclick = comenzarJuego;
 
 var palabrasSecretas = ["CASA", "TERMO", "RACING", "ALURA","DAMIAN", "CONSTANTINOPLA"];
 
-function comenzarJuego() {
-    elegirPalabraSecreta();
-    dibujarMastil()
-    dibujarLineaLetra();
-}
+
 function elegirPalabraSecreta() {
     var palabraAveriguar = palabrasSecretas[aleatorio(min, max, palabrasSecretas.length)];
     

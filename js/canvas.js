@@ -4,6 +4,7 @@
 var tablero = document.getElementById("ahorcado");
 var pincel = tablero.getContext("2d"); 
 
+var cuerpoHumano = [dibujarCabeza, dibujarTorzo, dibujarBrazoIzq, dibujarBrazoDer, dibujarPiernaIzq, dibujarPiernaDer];
 
 function dibujarCuerpoHumano() {
     dibujarCabeza()
