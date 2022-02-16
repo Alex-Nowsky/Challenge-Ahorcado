@@ -52,6 +52,8 @@ body {
   background: red;
   border-style: none;
   border-radius: 20px;
+  width: 700px;
+  margin-left: 300px;
 }
 .avisoGanador{
   font-size: 40px;
@@ -59,4 +61,6 @@ body {
   background: rgb(142, 144, 236);
   border-style: none;
   border-radius: 20px;
+  width: 700px;
+  margin-left: 300px;
 }
