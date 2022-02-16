@@ -1,7 +1,6 @@
-var botonDeInicio = document.getElementById("iniciar-juego")
-botonDeInicio.onclick = comenzarJuego;
 
-var palabrasSecretas = ["CASA", "TERMO", "RACING", "ALURA","DAMIAN", "CONSTANTINOPLA"];
+
+var palabrasSecretas = ["CASA", "TERMO", "RACING", "ALURA","DAMIAN", "CONSTANTINOPLA","MESA", "ESCRITORIO"];
 
 
 function elegirPalabraSecreta() {

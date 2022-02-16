@@ -1,5 +1,6 @@
 
-
+var botonDeInicio = document.getElementById("iniciar-juego")
+botonDeInicio.onclick = comenzarJuego;
 
 function comenzarJuego() {
     elegirPalabraSecreta();
@@ -7,6 +8,6 @@ function comenzarJuego() {
     dibujarLineaLetra();
     var input = document.querySelector("#teclas-presionadas");
     input.focus();
-    input.value = "";
+    
 }
 

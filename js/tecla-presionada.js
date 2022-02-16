@@ -3,6 +3,7 @@
 
 
 var letrasPermitidas = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+var letrasIncorrectas = []
 function onKeyDownHandler(event) {
     
     var codigo = event.which || event.keyCode;
@@ -10,11 +11,13 @@ function onKeyDownHandler(event) {
     for(var i = 0; i < letrasPermitidas.length; i++) {
         if((String.fromCharCode(codigo) == letrasPermitidas[i])  ) { //compara si la letra ingresada está en letrasPermitidas
             console.log(letrasPermitidas[i]);
+            
             if(compararLetraConPalabraSecreta(palabraSecreta, letrasPermitidas[i])) {
-                dibujarLetraCorrecta(letrasPermitidas[i]);             
+                dibujarLetraCorrecta(letrasPermitidas[i]);  
 
             } else {
-                dibujarLetraIncorrecta(letrasPermitidas[i]);
+                letrasIncorrectas.push(letrasPermitidas[i]);
+                dibujarLetraIncorrecta(letrasIncorrectas);
                 dibujarCuerpoHumano() 
             }
         } 
