@@ -19,15 +19,18 @@
     <div style="text-align:center; position:absolute">
       <canvas id="ahorcado" height="800px" width="1200px" style="position:absolute" >
       </canvas>
-      <input type="text" id = "teclas-presionadas" onkeydown="onKeyDownHandler(event);"
+      <input type="text" id = "teclas-presionadas" onkeypress="onKeyDownHandler(event);"
       required autocomplete="off" 
-        onkeypress="return ( event.charCode == 32 || event.charCode >= 65 && event.charCode <= 90)" min="1" maxlength="1">
-    </div>
+        onkeypress="return ( event.charCode >= 65 && event.charCode <= 90)" min="1" maxlength="1">
+        <div id="finDelJuego" class="aviso"> </div>
+        <div id="finDelJuegoGanador" class="avisoGanador"> </div>
+      </div>
     <script type="text/javascript" src="js/canvas.js"></script>
     <script type="text/javascript" src="js/ahorcado.js"></script>
     <script type="text/javascript" src="js/palabra-secreta.js"></script>
     <script type="text/javascript" src="js/lineas-de-letras.js"></script>
     <script type="text/javascript" src="js/tecla-presionada.js"></script>
     <script type="text/javascript" src="js/dibujar-letra.js"></script>
+    <script type="text/javascript" src="js/intentos-fallidos.js"></script>
   </body>
 </html>

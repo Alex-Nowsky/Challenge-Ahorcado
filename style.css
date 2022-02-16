@@ -46,3 +46,17 @@ body {
   margin-left: 700px;
  
 }
+.aviso {
+  font-size: 40px;
+  position: relative;
+  background: red;
+  border-style: none;
+  border-radius: 20px;
+}
+.avisoGanador{
+  font-size: 40px;
+  position: relative;
+  background: rgb(142, 144, 236);
+  border-style: none;
+  border-radius: 20px;
+}

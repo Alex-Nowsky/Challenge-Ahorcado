@@ -1,36 +1,42 @@
 
 
 
-
-var letrasPermitidas = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
-var letrasIncorrectas = []
+var letrasIncorrectas = [];
+var letrasCorrectas = [];
+var vectorPalabra = palabraSecreta.split(""); // convierte en un array por caracter
 function onKeyDownHandler(event) {
     
-    var codigo = event.which || event.keyCode;
+    var codigo = event.keyCode;
+    var caracterIngresado = String.fromCharCode(codigo).toUpperCase(); // uppercase pone en mayus
+    var encontrado = true;
+    var x = 655;
+    for(var i = 0; i < palabraSecreta.length; i++) {
         
-    for(var i = 0; i < letrasPermitidas.length; i++) {
-        if((String.fromCharCode(codigo) == letrasPermitidas[i])  ) { //compara si la letra ingresada está en letrasPermitidas
-            console.log(letrasPermitidas[i]);
+        if(vectorPalabra[i] == caracterIngresado) {
+            letrasCorrectas[i] = caracterIngresado; 
+            encontrado = false;
+            dibujarLetra(caracterIngresado,x,647);
             
-            if(compararLetraConPalabraSecreta(palabraSecreta, letrasPermitidas[i])) {
-                dibujarLetraCorrecta(letrasPermitidas[i]);  
-
-            } else {
-                letrasIncorrectas.push(letrasPermitidas[i]);
-                dibujarLetraIncorrecta(letrasIncorrectas);
-                dibujarCuerpoHumano() 
-            }
-        } 
-            
+        }
+        x = x + 35;
     }
-             
-} 
-function compararLetraConPalabraSecreta(palabraSecreta, letraPermitida) {
-    var palabraComparar = palabraSecreta;
-    for (i = 0; i < palabraComparar.length; i++) {
-        if(palabraComparar[i] == letraPermitida) {
-            return true;
+    var intentos = 0;
+    if (encontrado == true) {
+        intentos = intentos + 1;
+        letrasIncorrectas.push(caracterIngresado);
+        for(var j = 0; (j < letrasIncorrectas.length) && letrasIncorrectas.length < 7 ; j++) {
+            intentosFallidos(letrasIncorrectas, intentos); 
+            intentos = intentos + 1;
         }
     }
-    
-}       
+    comprobarGanador()
+} 
+
+function comprobarGanador() {
+    if(palabraSecreta == letrasCorrectas.join("")) {
+        document.getElementById("finDelJuegoGanador").style.visibility="visible";
+        document.getElementById("finDelJuegoGanador").innerHTML = "WINNER!";
+    }
+}
+
+

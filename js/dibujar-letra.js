@@ -1,9 +1,11 @@
 
 
-function dibujarLetraCorrecta(letra) {  
+function dibujarLetraCorrecta(letrasCorrectas) {  
     var x = 655; 
-    
-    dibujarLetra(letra,x,647);
+    for(var i = 0; i < letrasCorrectas.length; i++){
+        dibujarLetra(letrasCorrectas[i],x,647);
+        x = x + 35;
+    }
 }
 function dibujarLetraIncorrecta(letrasIncorrectas) {   // array
     var x = 655; 
