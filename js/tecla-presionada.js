@@ -24,12 +24,15 @@ function onKeyDownHandler(event) {
     if (encontrado == true) {
         intentos = intentos + 1;
         letrasIncorrectas.push(caracterIngresado);
-        for(var j = 0; (j < letrasIncorrectas.length) && letrasIncorrectas.length < 7 ; j++) {
-            intentosFallidos(letrasIncorrectas, intentos); 
+        var incorrectas = new  Set(letrasIncorrectas); // Set(...) para sacar duplicados
+        let letrasIncorrectasSinDuplicado = [...incorrectas];
+        for(var j = 0; (j < letrasIncorrectasSinDuplicado.length) && letrasIncorrectasSinDuplicado.length < 7 ; j++) {
+            intentosFallidos(letrasIncorrectasSinDuplicado, intentos); 
             intentos = intentos + 1;
         }
     }
     comprobarGanador()
+    
 } 
 
 function comprobarGanador() {

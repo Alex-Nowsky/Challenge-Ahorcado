@@ -9,18 +9,18 @@
   </head>
   <body>
     <div style="text-align:center; margin: 50px 0px;">
-      <h1 class="titulo">Ahorcado</h1>
+      <h1 class="titulo">Bienvenidos al juego del Ahorcado</h1>
       <button class="btn" id="iniciar-juego">INICIAR JUEGO</button>
     </div>
     <div style="text-align:center">
       <input class="text-input" type="text" id="input-nueva-palabra" placeholder="Escriba una nueva palabra">
-      <button class="btn" id="nueva-palabra">AGREGAR PALABRA</button> 
+      <button class="btn" id="nueva-palabra" type = "reset">AGREGAR PALABRA</button> 
     </div>
     <div style="text-align:center; position:absolute">
       <canvas id="ahorcado" height="800px" width="1200px" style="position:absolute" >
       </canvas>
       <input type="text" id = "teclas-presionadas" onkeypress="onKeyDownHandler(event);"
-        onkeypress="return (event.charCode >= 65 && event.charCode <= 90)">
+        >
         <div id="finDelJuego" class="aviso"> </div>
         <div id="finDelJuegoGanador" class="avisoGanador"> </div>
       </div>
@@ -31,5 +31,6 @@
     <script type="text/javascript" src="js/tecla-presionada.js"></script>
     <script type="text/javascript" src="js/dibujar-letra.js"></script>
     <script type="text/javascript" src="js/intentos-fallidos.js"></script>
+    <script type="text/javascript" src="js/agregar-nueva-palabra.js"></script>
   </body>
 </html>
