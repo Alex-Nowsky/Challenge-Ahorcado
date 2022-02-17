@@ -65,3 +65,10 @@ body {
   margin-left: 300px;
   margin-top: 30px;
 }
+.copyright {
+  border-radius: 30px;
+  background-color: rgb(38, 38, 129); 
+  margin-top: 820px;
+  padding: 30px;
+  color: white;
+}
